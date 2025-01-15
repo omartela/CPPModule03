@@ -10,43 +10,41 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ClapTrap.hpp"
+#include "../inc/FragTrap.hpp"
 
 int main(void)
 {
-	ClapTrap Pasi("Pasi");
-    ClapTrap Jussi("Jussi");
+	FragTrap Pasi("Pasi");
+    FragTrap Jussi("Jussi");
 
     // Test copy constructor and assignment operator.
-    ClapTrap Jukka("Jukka");
-    ClapTrap Kari(Jukka);
+    FragTrap Jukka("Jukka");
+    FragTrap Kari(Jukka);
     Kari = Jussi;
 
-    // Jussi attacks Pasi twice and Pasi takes damage.
+    // testing that cannot attack if dead. Jussi attacks Pasi two times and then Pasi is dead.
     Jussi.attack("Pasi");
-    Pasi.takeDamage(0);
+    Pasi.takeDamage(30);
     Jussi.attack("Pasi");
-    Pasi.takeDamage(0);
-    // Jussi repairs itself.
-    Jussi.beRepaired(0);
-
-    // Pasi repairs itself and then attacks Jussi.
-    Pasi.beRepaired(0);
+    Pasi.takeDamage(30);
+    Jussi.attack("Pasi");
+    Pasi.takeDamage(30);
+    Jussi.attack("Pasi");
+    Pasi.takeDamage(30);
+    // Pasi attacks Jussi, should not attack because Pasi is dead
     Pasi.attack("Jussi");
-    Jussi.takeDamage(0);
+
 
     // Jussi repairs itself to consume remaining energypoints.
-    Jussi.beRepaired(0);
-    Jussi.beRepaired(0);
-    Jussi.beRepaired(0);
-    Jussi.beRepaired(0);
-    Jussi.beRepaired(0);
-    Jussi.beRepaired(0);
-    Jussi.beRepaired(0);
+    for (int i = 0; i < 97; i++)
+        Jussi.beRepaired(5);
 
     // Jussi should not be able to attack or repair because it has no energy left.
     Jussi.attack("Pasi");
-    Jussi.beRepaired(0);
+    Jussi.beRepaired(20);
+
+    // Jussi High fives guys.
+    Jussi.highFivesGuys();
 
     return (0);
 }

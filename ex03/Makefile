@@ -12,11 +12,11 @@
 
 COMPILER = c++
 
-TARGET = ClapTrap
+TARGET = FragTrap
 INC_DIR = inc
-SRC = src/ClapTrap.cpp src/main.cpp
+SRC = src/ClapTrap.cpp src/FragTrap.cpp src/main.cpp
 OBJ = $(SRC:.cpp=.o)
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -I$(INC_DIR)
+CFLAGS = -Wall -Wextra -Werror -I$(INC_DIR)
 
 all: $(TARGET)
 

@@ -12,9 +12,9 @@
 
 COMPILER = c++
 
-TARGET = ClapTrap
+TARGET = ScavTrap
 INC_DIR = inc
-SRC = src/ClapTrap.cpp src/main.cpp
+SRC = src/ClapTrap.cpp src/ScavTrap.cpp src/main.cpp
 OBJ = $(SRC:.cpp=.o)
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -I$(INC_DIR)
 

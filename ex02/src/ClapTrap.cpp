@@ -13,14 +13,17 @@
 #include "../inc/ClapTrap.hpp"
 #include <iostream>
 
-ClapTrap::ClapTrap() : _name("Defaultname"), _hitPoints(10), _energyPoints(10), _attackDamage(0) 
+ClapTrap::ClapTrap() : _name("Defaultname"), _hitPoints(0), _energyPoints(0), _attackDamage(0)
 {
-	std::cout << "Default Constructor called" << std::endl;
+	std::cout << "ClapTrap default constructor called for " << _name << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string newName) : _name(newName), _hitPoints(10), _energyPoints(10), _attackDamage(0) 
+ClapTrap::ClapTrap(std::string newName,
+					int newHPoints,
+					int newEPoints,
+					int	newAttackD) : _name(newName), _hitPoints(newHPoints), _energyPoints(newEPoints), _attackDamage(newAttackD) 
 {
-	std::cout << "Constructor called for " << newName << std::endl;
+	std::cout << "ClapTrap Constructor called for " << _name << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other)
@@ -48,7 +51,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor called for " << _name << std::endl;
+	std::cout << "ClapTrap destructor called for " << _name << std::endl;
 }
 
 void	ClapTrap::attack(const std::string &target)
