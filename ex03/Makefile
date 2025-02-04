@@ -12,18 +12,18 @@
 
 COMPILER = c++
 
-TARGET = FragTrap
+TARGET = DiamondTrap
 INC_DIR = inc
-SRC = src/ClapTrap.cpp src/FragTrap.cpp src/main.cpp
+SRC = src/ClapTrap.cpp src/FragTrap.cpp src/ScavTrap.cpp src/DiamondTrap.cpp src/main.cpp
 OBJ = $(SRC:.cpp=.o)
-CFLAGS = -Wall -Wextra -Werror -I$(INC_DIR)
+CFLAGS = -Wall -Wextra -Werror -Wshadow -I$(INC_DIR)
 
 all: $(TARGET)
 
 $(TARGET): $(OBJ)
 	$(COMPILER) $(CFLAGS) -o $(TARGET) $(OBJ)
 
-%.o: %.cpp
+src/%.o: src/%.cpp
 	$(COMPILER) $(CFLAGS) -c $< -o $@
 
 clean:

@@ -23,6 +23,7 @@ class ClapTrap
 
 	public:
 		ClapTrap();
+		ClapTrap(const std::string newName);
 		ClapTrap(const std::string newName,
 				 int newHPoints,
 				 int newEPoints,
