@@ -24,7 +24,7 @@ FragTrap::FragTrap(std::string const newName) : ClapTrap(newName, 100, 100, 30)
 
 FragTrap::~FragTrap()
 {
-    std::cout << "FragTrap destructor called for" << _name << std::endl;
+    std::cout << "FragTrap destructor called for " << _name << std::endl;
 }
 
 FragTrap::FragTrap(FragTrap const &original) : ClapTrap(original)

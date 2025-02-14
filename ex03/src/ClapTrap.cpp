@@ -18,6 +18,11 @@ ClapTrap::ClapTrap() : _name("Defaultname"), _hitPoints(0), _energyPoints(0), _a
 	std::cout << "ClapTrap default constructor called for " << _name << std::endl;
 }
 
+ClapTrap::ClapTrap(const std::string newName) : _name(newName + "_clap_name"), _hitPoints(0), _energyPoints(0), _attackDamage(0)
+{
+	std::cout << "ClapTrap default constructor called for " << _name << std::endl;
+}
+
 ClapTrap::ClapTrap(std::string newName,
 					int newHPoints,
 					int newEPoints,
